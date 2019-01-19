@@ -16,15 +16,15 @@ end
  
 When /I click on New Article button/ do
 
-     # within("#session") do
+       #Click on creation button, and input title and text of blog, then click on Save button
        click_link('New Article')
        fill_in('Title', with: 'Test001')
        fill_in('Text', with: 'This is my test001')
        click_button('Create Article')
-    # end
 end
  
 Then /new article should be created/ do
+	 #Verify blog has been created successfully
 	 page.has_content?('Article was successfully created')
 
 end
